@@ -1,0 +1,67 @@
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+      <script src="https://cdn.jsdelivr.net/npm/p5" charset="utf-8"></script>
+    <title>Homework 2</title>
+
+    <script type="text/javascript">
+///////////////////////////// end of code /////////////////////////////
+// valuables:
+let x = 100;
+let y = 100;
+let cc=0;
+let Xspeed = 1;
+let Yspeed = 1;
+let r = 100; //radius
+let a,b,c;
+
+function setup(){
+  let cnv = createCanvas(600,400);
+  cnv.stroke(51);
+  cnv.style("border:10px solid #000000;");
+  cnv.center();
+}
+
+function draw(){
+ background(200);
+ drawCircle(x,y,r);
+
+  x = x + Xspeed;
+  y = y + Yspeed;
+
+  if( x >width -r/2 || x<r/2){
+    Xspeed = -Xspeed;
+    fill(a,b,c);
+    cc++;
+
+  }
+
+  if( y >height -r/2 || y<r/2){
+    Yspeed = -Yspeed;
+    fill(a,b,c);
+    cc++;
+  }
+  else{
+    a = floor(random(0,255));
+    b = floor(random(0,255));
+    c = floor(random(0,255));
+  }
+
+  text("R: "+a,10,height-10);
+  text("B: "+b,110,height-10);
+  text("G: "+c,210,height-10);
+  text("Number of colors changed: "+cc,310,height-10);
+}
+
+
+function drawCircle(x,y,r){
+  circle(x,y,r);
+}
+
+///////////////////////////// end of code /////////////////////////////
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

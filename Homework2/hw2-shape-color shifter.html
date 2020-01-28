@@ -1,0 +1,129 @@
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+      <script src="https://cdn.jsdelivr.net/npm/p5" charset="utf-8"></script>
+    <title>Homework 2</title>
+
+    <script type="text/javascript">
+///////////////////////////// end of code /////////////////////////////
+
+let x,y,z,a,b,c;
+let sx,sy,sz,sa,sb,sc;
+let r,p,g;
+let counter,f_counter=0;
+let dir_choice
+
+
+function setup(){
+  let cnv = createCanvas(900,900);
+  cnv.stroke(51);
+  cnv.style("border:10px solid #000000;");
+  cnv.center();
+}
+
+function draw(){
+  //frameRate(10);
+background(200);
+if(f_counter%100 == 0){
+  counter = floor(random(1,7));
+  x = random(50,850);
+  y = random(50,850);
+  z = random(50,850);
+  a = random(50,850);
+  b = random(50,850);
+  c = random(50,850);
+  r = random(0,255);
+  p = random(0,255);
+  g = random(0,255);
+  /////
+  sx = random(-1,1);
+  sy = random(-1,1);
+  sz = random(-1,1);
+  sa = random(-1,1);
+  sb = random(-1,1);
+  sc = random(-1,1);
+
+}
+else{
+  picker(counter);
+  x+=sx;
+  y+=sy;
+  z+=sz;
+  a+=sa;
+  b+=sb;
+  c+=sc;
+}
+f_counter++;
+
+
+}
+
+function draw_circle (x,y,z){
+  circle(x,y,z);
+}
+function draw_triangle(x,y,z,a,b,c){
+  triangle(x,y,z,a,b,c);
+}
+function draw_square(x,y,z){
+  square(x,y,z);
+}
+function draw_rect(x,y,z,a){
+  rect(x,y,z,a);
+}
+function draw_ellipse(x,y,z,a){
+  ellipse(x,y,z,a);
+}
+function draw_line(x,y,z,a){
+  line(x,y,z,a);
+}
+function picker(counter){
+  fill(r,p,g);
+  switch (counter) {
+    case 1: draw_circle(x,y,z);
+    break;
+    case 2: draw_triangle(x,y,z,a,b,c);
+    break;
+    case 3: draw_square(x,y,z);
+    break;
+    case 4: draw_rect(x,y,z,a);
+    break;
+    case 5: draw_ellipse(x,y,z,a);
+    break;
+    case 6: draw_line(x,y,z,a);
+    break;
+    default: print("there is no drawing");
+  }
+}
+
+// // solution with if without using floor if we have int number just make the statement == 'equal'
+//   if(counter <2 ){
+//     draw_circle(x,y,z);
+//   }
+//   else if(counter <3 && counter >2){
+//     draw_triangle(x,y,z,a,b,c);
+//   }
+//   else if(counter <4 && counter >3){
+//     draw_square(x,y,z);
+//   }
+//   else if(counter <5 && counter >4){
+//     draw_rect(x,y,z,a);
+//   }
+//   else if(counter <6 && counter >5){
+//     draw_ellipse(x,y,z,a);
+//   }
+//   else if(counter <7 && counter >6){
+//     draw_line(x,y,z,a);
+//   }
+//   else{
+//     print("where is my drawing!!");
+//   }
+
+
+
+///////////////////////////// end of code /////////////////////////////
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
