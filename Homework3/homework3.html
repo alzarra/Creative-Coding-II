@@ -1,0 +1,36 @@
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+      <script src="https://cdn.jsdelivr.net/npm/p5" charset="utf-8"></script>
+    <title>Homework 1</title>
+
+    <script type="text/javascript">
+
+      let img;
+
+      function preload(){
+        img = loadImage("D:\Atom Projects\Creative-Coding-II\Homework3\g.jpg");
+      }
+
+      function setup() {
+        let cnv = createCanvas(900, 500);
+        cnv.style("border:10px solid #000000;");
+        cnv.center();
+        ////
+
+      }
+
+      function draw() {
+        background(50,145,168);
+
+        fill(168,  98,  50);
+        texture(img);
+
+        rect(0,400,900,500);
+      }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
