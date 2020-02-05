@@ -7,17 +7,27 @@
 
     <script type="text/javascript">
 
-      let img;
+      let road;
+      let L_wheel;
+      let R_wheel;
+
+      ;
+
 
       function preload(){
-        img = loadImage("D:\Atom Projects\Creative-Coding-II\Homework3\g.jpg");
+        road = loadImage('road.jpg');
+        L_wheel = loadImage('wheel.png');
+        R_wheel = loadImage('wheel.png');
       }
 
       function setup() {
         let cnv = createCanvas(900, 500);
         cnv.style("border:10px solid #000000;");
         cnv.center();
+        x = width/2;
+        print(x);
         ////
+        myCar = new car(100,400);
 
       }
 
@@ -25,9 +35,45 @@
         background(50,145,168);
 
         fill(168,  98,  50);
-        texture(img);
+        image(road,0,400,900,500);
+        textSize(36);
+        text("Wait for it, Wait for it, Waiiiiiiit", 250,30);
+        ///
+        myCar.show();
+        myCar.move();
 
-        rect(0,400,900,500);
+      }
+////////////// class ///////////
+
+      class car{
+        constructor(x,y){
+          this.x = x;
+          this.y = y;
+          this.angle = 2;
+          this.MouseX=mouseX;
+          this.speed=1;
+        }
+        show(){
+          // car body
+          fill(130,200,10,);
+          rect(this.x-50,this.y-150,250,100,10,10)
+          // left wheels
+          image(L_wheel,this.x-40,350,100,100);
+          // right wheel
+          image(R_wheel,this.x+90,350,100,100);
+
+        }
+        move(){
+
+          if(this.x > width){
+            this.x=0;
+            this.speed++;
+          } else {
+            this.x+=this.speed;
+            text("speed: "+this.speed, 10,30);
+          }
+
+        }
       }
     </script>
   </head>
